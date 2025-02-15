@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
+<!-- some images in this website templates are from bigstockphoto.com. the images that come as part of the website design template cannot be resold or redistributed for use outside the web templates for any reason. --> 
+ 
+<title>admin</title>
+<meta name=keywords content="admin"/>
+<meta name=description content="admin"/>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<link rel='canonical' href='http://www.miomemo.it/admin.html'><meta property='og:locale' content='en_US' />
+<meta property='og:type' content='website' />
+<meta property='og:title' content="admin- MioMemo   ">
+<meta property='og:description' content="admin">
+<meta property='og:image' content="http://www.miomemo.it/img/testata.jpg">
+<meta property='og:url' content="http://www.miomemo.it/admin.html">
+<meta name='twitter:card' content='summary_large_image'>
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--Temp-CSS-->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<style>body{visibility:hidden;}</style>
+<!--//Temp-CSS-->
+
+<!--Temp-JS-->
+<script src="js/jquery.min.js"></script>
+<!--//Temp-JS-->
+
+
+<!--Tempbodybgbegin--><!--Tempbodybgend--> 
+<link href='css/layout_style.css' rel='stylesheet' type='text/css' media='all' />
+<style> 
+#cssPwdDiv{margin:0; padding:0; font-family:arial, verdana;} 
+.pass_container { 
+margin-right: auto; 
+margin-left: auto; 
+padding:7em 2em; 
+} 
+.password_main{ 
+box-shadow:0px 2px 15px #333; 
+background:#fff; 
+-webkit-border-radius: 13px ;  
+-moz-border-radius: 13px; 
+border-radius: 13px; 
+} 
+.password_main h2 { 
+background-color: #3899ec; 
+height: 1.5em; 
+-webkit-border-radius: 13px 13px 0 0;  
+-moz-border-radius: 13px 13px 0 0; 
+border-radius: 13px 13px 0 0; 
+padding:0; margin:0; 
+} 
+.pass_info{text-align:center; margin: 0;font-weight:bold; font-size: 0.8em; margin: 2em 0.5em;} 
+.pass_info p{font-weight:bold; font-size: 1.5em; margin:0; padding:1em 0;} 
+.pass_info input[type="button"]{ 
+padding: 0 2em; 
+color: #FFF; 
+background: #3899ec; 
+border-radius: 10px; 
+-webkit-border-radius: 10px; 
+-o-border-radius: 10px; 
+-moz-border-radius: 10px; 
+-ms-border-radius: 10px; 
+margin: 2em 0.5em 1.5em 0; 
+font-size: 1.2em; 
+display: inline; 
+line-height: 1.6em; 
+text-align: center; 
+text-decoration:none; 
+cursor:pointer; 
+border:none; 
+} 
+.pass_info input[type="button"]:hover{ 
+background: #006bbe; 
+} 
+.pass_info input[type="password"]{ 
+width: 75%; 
+padding: 0.5em; 
+margin:0 0 0 1em; 
+background: #fff; 
+outline: none; 
+border: 1px solid #000; 
+} 
+.pass_text{padding-bottom:1em; float:none;} 
+@media (min-width: 480px) { 
+.pass_container { 
+width: 450px; 
+} 
+.pass_info{margin:2em;} 
+.pass_text{padding:0.6em 0 0.2em 0; float:left;} 
+.pass_info input[type="password"] { width: 45%;} 
+} 
+</style> 
+</head> 
+
+<body id="bodyid_01" onload="attivaPrimo();" style="visibility:hidden;" >
+<div id="primo" style="position:absolute; width:100%; height:100%; z-index:1; left: 0px; top: 0px; background-color: #F0F0F0; layer-background-color: #FFFFFF; border: 1px none #000000; overflow: auto; visibility: visible; clip: rect(auto auto auto 1);"></div>
+<script src="js/md5_1.js"></script>
+<script>var pwd='';
+function attivaPrimo()
+ {
+var layer_obj = window.document.createElement('DIV');
+layer_obj.id   = 'prompt';
+layer_obj.style.position   = 'absolute';
+obj=window.document.body.firstChild;
+var screen_width = window.document.body.clientWidth;
+var screen_height = window.document.body.clientHeight;
+layer_obj.style.zIndex = 3;
+window.document.body.insertBefore(layer_obj,obj);
+layer_obj.innerHTML='<div id="cssPwdDiv" style="width:100%;"><div class="pass_info"><p>Questa pagina è protetta da password. È possibile visualizzare la pagina dopo aver inserito la password.</p></div><div class="pass_container"><div class="password_main"><h2></h2><div class="pass_maindiv"><div class="pass_info"><div class="pass_text"> Inserire la password per la pagina </div><input type="password" id="pwd" name="pwd" value="" onkeypress="press(event);" placeholder="password" required=""><div><input type="button" id="ok" name="ok" value="INVIA" onclick="pwd=document.getElementById(\'pwd\').value;verify_pwd();"><input type="button" id="cancel" name="cancel" value="ANNULLA" onclick="close_prompt();overwrite();"></div></div><div class="clearfix"> </div></div></div></div></div>';
+var screen_left = parseInt((screen_width-layer_obj.offsetWidth)/2);
+var screen_top = parseInt((screen_height-layer_obj.offsetHeight)/2);
+layer_obj.style.top = screen_top-125;
+layer_obj.style.left = screen_left;
+layer_obj.style.width='100%'; layer_obj.style.visibility='visible';
+}
+function press(event)
+{ if(event!=null && event.keyCode && event.keyCode==13)
+{pwd=document.getElementById('pwd').value;
+verify_pwd();
+}}function close_prompt() {
+var obj_prompt=document.getElementById('prompt');
+window.document.body.removeChild(obj_prompt);
+}
+ 
+ 
+function doScriptReplace(str){ 
+while(str.indexOf('akscrpt11')>0){ 
+var index1=str.indexOf('akscrpt11'); 
+str=str.substring(0,index1)+'<'+'script>'+str.substring(index1+9); 
+var index2=str.indexOf('akscrpt22'); 
+str=str.substring(0,index2)+'</'+'script>'+str.substring(index2+9); 
+} 
+str = str.replace(/&#39;/g, '\''); 
+return str; 
+} 
+ 
+function verify_pwd()
+{
+close_prompt();
+if((pwd!="")&&(pwd!=null))
+{
+pwd=hex_md5(pwd); 
+} 
+document.getElementById("primo").style.left = 0 + "px";
+document.getElementById("primo").style.top =0+ "px";
+if(pwd=="751cb3f4aa17c36186f4856c8982bf27") {
+document.getElementById("primo").style.visibility = "hidden";
+ 
+ 
+$.ajax({  
+	url: 'https://adminsitebuilder.aruba.it/swiz/password_action.jsp?callback=myJsonpCallback',  
+	type: 'POST',  
+	data: {uid:2480538,pid:14},  
+	dataType: 'jsonp',  
+	jsonpCallback: 'myJsonpCallback',  
+	contentType: 'application/json; charset=utf-8;',  
+	success: function (result) {  
+		var jsonObject = JSON.parse(JSON.stringify(result));  
+		$('#akmsg1').html(doScriptReplace(jsonObject[0].txt1));  
+		$('#akmsg2').html(doScriptReplace(jsonObject[1].txt2));  
+		$('#akmsg3').html(doScriptReplace(jsonObject[2].txt3));  
+		$('#akmsg4').html(doScriptReplace(jsonObject[3].txt4));  
+	},  
+	error: function (xhr, status, error) {  
+	}  
+});  
+ 
+if( document.getElementById("bodyid_01") )
+document.getElementById("bodyid_01").style.visibility="visible";
+}
+else if((pwd=="")||(pwd!=null))
+{
+document.getElementById("primo").style.visibility = "visible";
+alert("Si prega di inserire la password corretta");
+attivaPrimo();  }
+  }
+function overwrite() {
+document.write('<BODY bgcolor="#FFFFFF" text="#336699" link="#336699" vlink="#336699" alink="#336699">');
+document.write('<TABLE ALIGN="CENTER" WIDTH="100%" HEIGHT="100%" VALIGN="CENTER">');
+document.write('<TR>');
+document.write('<TD ALIGN="CENTER">');
+document.write('<FONT face="Arial, Helvetica, sans-serif" size="4">');
+document.write('<H3>');document.write('<B>Spiacenti! Non si possiedono autorizzazioni per visualizzare questa pagina</B>');
+ if(navigator.userAgent.indexOf('MSIE 7.0')!=-1)
+{document.write('<BR><BR><B>(Oppure)</B>');
+document.write('<BR><BR><B>Script Popup bloccati. Abilitare “Consenti ai siti Web di richiedere informazioni mediante finestre controllate da script” sulle impostazioni di protezione del browser.</B>');}
+document.write('</H3>');
+document.write('</FONT>');
+document.write('</TD></TR>');document.write('<TR>');
+document.write('<TD ALIGN="CENTER">');
+document.write('<FONT face="Arial, Helvetica, sans-serif" size="4">');
+document.write('<H5><A HREF="javascript: if(navigator.userAgent.indexOf(\'MSIE\')!= -1) history.go(-2); else history.go(-1);">');document.write('Cliccare qui</A>  ');document.write('per andare indietro</H5>');
+document.write('</FONT>');
+document.write('</TD>');document.write('</TR></TABLE></BODY>');
+document.close();
+  }</script>
+
+<p style='font-size:0; color:#fff; position:absolute; z-index:-10; top:0;' class=container>admin- MioMemo   </p>
+
+
+
+
+<div class="header-section">
+
+		
+	<div class="top-menu" id="TempMainNav">
+		<span class="menu"> </span>
+			<ul id="aktopnavig">
+											
+				<li><a href="index.htm" title="Home"><span>Home</span></a></li>
+											
+				<li><a href="download.html" title="Download"><span>Download</span></a></li>
+											
+				<li><a href="guest-book.html" title="Lascia Commento"><span>Lascia Commento</span></a></li>
+											
+				<li><a href="come-fatto.html" title="Com'è Fatto"><span>Com'è Fatto</span></a></li>
+											
+				<li><a href="contact-us-form.html" title="Contact Me!"><span>Contact Me!</span></a></li>
+				
+			</ul>
+	</div>	
+		
+
+<div class="title-section">
+
+				
+	<div class="maintitle" id="akmtitle" title='<span style="font-size:48px;">MioMemo</span><span style="font-size:72px;"></span>'><h1><span style="font-size:48px;">MioMemo</span><span style="font-size:72px;"></span></h1></div>
+		
+	
+	
+	<div class="subtitle" id="akstitle"><span><span style="font-size:28px;">Strumenti per la Scuola Media</span></span></div>
+	
+	
+</div>
+
+<div class="tp_rgt_social" id="sm_pc_contact_sec">
+	
+</div>
+
+</div>
+		
+<div class="innermesg_container">
+	<div class="hm_inner">
+		<div class="container hm_inner_pd"><h3 id="akheadcont">admin</h3><div class="hm_inner_separate"><img src="img/user-img6.png" /></div></div>
+	</div>
+	
+		<div class="container" id="akmsg1">Pagine protette da password</div>
+</div>	
+	 
+<div class="btlink">	
+
+			
+		<div class="ftr_navi ftr">
+		<div class="container">
+		<nav class="botnav botnav_sub">
+			<ul id="akbottomnavig">
+				
+				<li><a class="page-scroll" href="index.htm" title="Home"><span>Home</span></a></li>
+				
+				<li><a class="page-scroll" href="download.html" title="Download"><span>Download</span></a></li>
+				
+				<li><a class="page-scroll" href="guest-book.html" title="Lascia Commento"><span>Lascia Commento</span></a></li>
+				
+				<li><a class="page-scroll" href="come-fatto.html" title="Com'è Fatto"><span>Com'è Fatto</span></a></li>
+				
+				<li><a class="page-scroll" href="contact-us-form.html" title="Contact Me!"><span>Contact Me!</span></a></li>
+				
+				<li><a class="page-scroll" href="site_map.html" title="Mappa del sito"><span>Mappa del sito</span></a></li>
+				
+			</ul>
+		</nav>
+		</div>
+		</div>
+			
+		
+		<div class="clearfix"> </div>
+		
+<div class="contact-sec">
+<div class="contact-info">
+
+	
+	<div class="ph-number" id="aktxtphone"><a href="tel:+39 05831646270">+39 05831646270</a></div>
+	
+	
+</div>
+
+<div class="smedia" id="sm_mob_contact_sec">
+</div>
+
+<div class="contact-info">
+ 
+	
+	<div class="email" id="aktxtmail"><a href="mailto:info@miomemo.it">info@miomemo.it</a></div>
+	
+	
+</div>
+</div>
+
+</div>
+
+  
+<div class="footer">
+	<div class="container" id="akusrftr">
+		<div>&#10;<p><span style="font-size:22px;">&copy; 2020-2021 Leonardo Straccia &middot; Sponsorizzato da <a href="https://www.centromedia.com/it/company/index.html">Centromedia Srl</a></span></p>&#10;</div>
+		<div class="clearfix"> </div>
+	</div>	
+</div>
+
+
+
+
+
+
+<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	
+<!--External-Temp-CSS-->
+<!--External-Temp-JS-->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/move-top.js"></script>
+<script src="js/easing.js"></script>
+
+<!-- script for menu -->
+<script>
+$("span.menu").click(function(){
+	$(".top-menu ul").slideToggle("slow" , function(){
+	});
+});
+</script>
+<!-- //script for menu -->
+
+<script src="js/responsiveslides.min.js"></script>
+<script>
+// You can also use "$(window).load(function() {"
+$(function () {
+	// Slideshow 4
+	$("#slider3").responsiveSlides({
+		auto: true,
+		pager:true,
+		nav:false,
+		speed: 500,
+		namespace: "callbacks",
+		before: function () {
+		},
+		after: function () {
+		}
+	});	
+});
+</script>
+
+<script src="js/scrollreveal.min.js"></script>
+<script>
+$(document).ready(function() {
+	$().UItoTop({ easingType: 'easeOutQuart' });
+});
+</script>
+<script>function pText(n){document.body.innerHTML = n;}</script>
+
+<script src="js/navscript.js"></script>
+<script>
+$(document).ready(function() {/*<div>*/
+	var htmlStr = ''+$('#sm_pc_contact_sec').html();
+	if(htmlStr.indexOf('<script>')>2) {
+		htmlStr = htmlStr.substring(0,htmlStr.indexOf('<script>'))+'</div>';
+	}
+	$('#sm_mob_contact_sec').html(htmlStr);
+});
+</script>
+<script>
+var jsMainMenuScroll = false;
+function fixMainMenuScroll() {
+	if(!jsMainMenuScroll) {
+		jsMainMenuScroll = true;
+		if($('#TempMainNav li:last-child').offset().top-$(window).scrollTop() > $(window).height()-120 ) {
+			$('#TempMainNav').css('position', 'relative');
+		}
+	}
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Cinzel:400,700,900|Zilla+Slab:300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+
+<script>function pText(n){document.body.innerHTML = n;}</script>
+<script src='https://de.mobilesitedesigner.com/aruba/1001/navig.js'></script>
+
+<!----google analytics//---->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-196264165-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-196264165-1');
+</script>
+<!----/google analytics//---->
+</body>
+</html>
