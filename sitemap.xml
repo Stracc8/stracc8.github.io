@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <urlset xmlns="http://www.google.com/schemas/sitemap/0.84"	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" >
-<url><loc>http://www.miomemo.it/index.htm</loc><lastmod>2021-05-04T19:58:09.0+02:00</lastmod></url>
-<url><loc>http://www.miomemo.it/download.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
-<url><loc>http://www.miomemo.it/guest-book.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
-<url><loc>http://www.miomemo.it/come-fatto.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
-<url><loc>http://www.miomemo.it/contact-us-form.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
-<url><loc>http://www.miomemo.it/services.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
-<url><loc>http://www.miomemo.it/specialities.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
-<url><loc>http://www.miomemo.it/installazione-su-windows.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
+<url><loc>/index.htm</loc><lastmod>2021-05-04T19:58:09.0+02:00</lastmod></url>
+<url><loc>/download.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
+<url><loc>/guest-book.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
+<url><loc>/come-fatto.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
+<url><loc>/contact-us-form.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
+<url><loc>/services.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
+<url><loc>/specialities.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
+<url><loc>/installazione-su-windows.html</loc><lastmod>2021-05-04T19:55:14.0+02:00</lastmod></url>
 </urlset>
